@@ -150,3 +150,7 @@ def tcc_detalhes(request, id):  # função adicionada
         'tcc': tcc,
     }
     return HttpResponse(template.render(context, request))
+
+def dashboard(request): # adicione essa função
+    template = loader.get_template('dashboard.html')
+    return HttpResponse(template.render())

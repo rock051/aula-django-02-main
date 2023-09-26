@@ -6,4 +6,5 @@ urlpatterns = [
     path('livros', views.livros, name='livros'),  #linha adicionada
     path('tccs', views.tccs, name='tccs'),
     path('tccs/detalhes/<int:id>', views.tcc_detalhes, name='tcc_detalhes'),# linha adicionado
+    path('dashboard', views.dashboard, name='dashboard'), # adicione esta linha
 ]

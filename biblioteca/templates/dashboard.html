@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+    Portal Biblioteca - Dashboard
+{% endblock %}
+
+{% block conteudo %}
+    <div class="mycard">
+        <h1>Dashboard</h1>
+        <div>
+            <canvas id="graficoNumVolumes"></canvas>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('graficoNumVolumes');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+            labels: ['Livros', 'TCCs', 'Dissertações', 'Teses', 'Apostilas', 'Jornais'],
+            datasets: [{
+                label: 'Número de Volumes',
+                data: [12, 19, 8, 5, 2, 10],
+                borderWidth: 1
+            }]
+            },
+            options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+            }
+        });
+    </script>
+{% endblock %}
