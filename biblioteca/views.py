@@ -62,3 +62,91 @@ def livros(request):    #função adicionada
         ]
     }
     return HttpResponse(template.render(context, request))
+
+def tccs(request):      # função adicionada
+    template = loader.get_template('tccs.html')
+    context = {
+        'tccs': [
+            {
+                "id": 1,
+                "titulo": "Sistemas de Recomendação Personalizados",
+                "autor": "Maria Silva",
+                "orientador": "Prof. João Santos",
+                "ano": 2021
+            },
+            {
+                "id": 2,
+                "titulo": "Segurança de Redes em Ambientes Corporativos",
+                "autor": "Pedro Oliveira",
+                "orientador": "Profa. Ana Rodrigues",
+                "ano": 2020
+            },
+            {
+                "id": 3,
+                "titulo": "Inteligência Artificial Aplicada à Análise de Dados",
+                "autor": "Luana Costa",
+                "orientador": "Prof. André Martins",
+                "ano": 2019
+            },
+            {
+                "id": 4,
+                "titulo": "Desenvolvimento de Aplicativos Móveis para Saúde",
+                "autor": "Carlos Santos",
+                "orientador": "Profa. Maria Pereira",
+                "ano": 2018
+            },
+            {
+                "id": 5,
+                "titulo": "Aprendizado de Máquina na Detecção de Fraudes",
+                "autor": "Rafael Ferreira",
+                "orientador": "Prof. Marcos Lima",
+                "ano": 2017
+            }
+        ]
+    }
+    return HttpResponse(template.render(context, request))
+
+def tcc_detalhes(request, id):  # função adicionada
+    tccs = [
+        {
+            "id": 1,
+            "titulo": "Sistemas de Recomendação Personalizados",
+            "autor": "Maria Silva",
+            "orientador": "Prof. João Santos",
+            "ano": 2021
+        },
+        {
+            "id": 2,
+            "titulo": "Segurança de Redes em Ambientes Corporativos",
+            "autor": "Pedro Oliveira",
+            "orientador": "Profa. Ana Rodrigues",
+            "ano": 2020
+        },
+        {
+            "id": 3,
+            "titulo": "Inteligência Artificial Aplicada à Análise de Dados",
+            "autor": "Luana Costa",
+            "orientador": "Prof. André Martins",
+            "ano": 2019
+        },
+        {
+            "id": 4,
+            "titulo": "Desenvolvimento de Aplicativos Móveis para Saúde",
+            "autor": "Carlos Santos",
+            "orientador": "Profa. Maria Pereira",
+            "ano": 2018
+        },
+        {
+            "id": 5,
+            "titulo": "Aprendizado de Máquina na Detecção de Fraudes",
+            "autor": "Rafael Ferreira",
+            "orientador": "Prof. Marcos Lima",
+            "ano": 2017
+        }
+    ]
+    tcc = tccs[id-1]
+    template = loader.get_template('tcc_detalhes.html')
+    context = {
+        'tcc': tcc,
+    }
+    return HttpResponse(template.render(context, request))
