@@ -1,5 +1,6 @@
-from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import loader
 
 def principal(request):
-    return HttpResponse("Olá Mundo! - Portal Biblioteca")
+    template = loader.get_template('principal.html')
+    return HttpResponse(template.render())
