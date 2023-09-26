@@ -1,6 +1,6 @@
 # Aula Djando 02 - Sistema para Portal Biblioteca
 
-segui esse tutorial da aula : https://github.com/ufla-prog-web/aula-django-02
+Segui esse tutorial da aula : https://github.com/ufla-prog-web/aula-django-02
 
 <p align="center">
   <a href="#">
